@@ -1,0 +1,12 @@
+<div class="input-wrapper">
+    <label *ngIf="label" class="input-label">{{ label }}</label>
+    <input
+      type="text"
+      class="input-field"
+      [placeholder]="placeholder"
+      [(ngModel)]="value"
+      [ngClass]="{ 'error-border': error }"
+    />
+    <p *ngIf="error" class="error-text">{{ error }}</p>
+  </div>
+  
