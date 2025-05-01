@@ -1,0 +1,12 @@
+<div class="dropdown-container">
+    <label class="select-label">{{ label }}</label>
+    <select 
+      [(ngModel)]="selected" 
+      [ngClass]="{ 'selected-border': selected }"
+      class="select-field"
+    >
+      <option [value]="''" disabled selected hidden>{{ placeholder }}</option>
+      <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+  

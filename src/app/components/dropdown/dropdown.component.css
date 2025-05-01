@@ -1,0 +1,32 @@
+
+
+.select-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: sans-serif;
+  }
+  
+  .select-label {
+    margin-right :4px;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .select-field {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out;
+  }
+
+
+  .select-field:focus,
+.select-field:not([value=""]) {
+  border: 2px solid #007bff; /* Blue border */
+}
+
+.selected-border {
+    border: 2px solid #007bff; /* Blue border */
+  }
