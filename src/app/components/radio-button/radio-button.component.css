@@ -1,0 +1,22 @@
+
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+  }
+  
+  .group-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .radio-option {
+    margin-bottom: 0.25rem;
+  }
+  
+  input[type='radio'] {
+    margin-right: 0.5rem;
+    accent-color: #007bff;
+  }
+  

@@ -1,1 +1,18 @@
-<p>radio-button works!</p>
+
+
+<div class="radio-group">
+    <label class="group-label">{{ label }}</label>
+    <div *ngFor="let option of options" class="radio-option">
+      <label>
+        <input
+          type="radio"
+          name="radio-group"
+          [value]="option"
+          [checked]="selected === option"
+          (change)="onChange(option)"
+        />
+        {{ option }}
+      </label>
+    </div>
+  </div>
+  

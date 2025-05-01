@@ -1,11 +1,24 @@
-import { Component } from '@angular/core';
+
+
+import { CommonModule } from '@angular/common';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-radio-button',
-  imports: [],
+  selector: 'ui-radio-group',
+  standalone: true,
+  imports : [CommonModule],
   templateUrl: './radio-button.component.html',
-  styleUrl: './radio-button.component.css'
+  styleUrls: ['./radio-button.component.css']
 })
 export class RadioButtonComponent {
+  @Input() label: string = '';
+  @Input() options: string[] = [];
+  @Input() selected: string = '';
 
+  @Output() selectionChange = new EventEmitter<string>();
+
+  onChange(value: string) {
+    this.selected = value;
+    this.selectionChange.emit(value);
+  }
 }
