@@ -1,0 +1,19 @@
+<!-- Single Checkbox -->
+<div *ngIf="!value">
+  <label class="custom-checkbox">
+    <input type="checkbox" [checked]="checked" (change)="toggleSingle()" />
+    <span class="checkbox-label">{{ label }}</span>
+  </label>
+</div>
+
+<!-- Multiple Checkboxes (part of a group) -->
+<div *ngIf="value">
+  <label class="custom-checkbox">
+    <input
+      type="checkbox"
+      [checked]="selectedValues.includes(value)"
+      (change)="toggleMultiple()"
+    />
+    <span class="checkbox-label">{{ label }}</span>
+  </label>
+</div>
