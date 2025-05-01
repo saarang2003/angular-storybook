@@ -309,6 +309,203 @@
             "duplicateName": "ButtonComponent-1"
         },
         {
+            "name": "CheckboxComponent",
+            "id": "component-CheckboxComponent-68958a32fc18affc4dc53c758b5bf1ec8cc369b3709ab80df3cdbdea485d57ba19f11915b6283d0c5274623ddcc258b1a9978d56d4f09bfec6bec83bbc2af5d7",
+            "file": "src/app/components/checkbox/checkbox.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-checkbox",
+            "styleUrls": [
+                "./checkbox.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./checkbox.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "selectedValues",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "toggleMultiple",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "toggleSingle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ui-checkbox',\r\n  imports : [CommonModule],\r\n  standalone: true,\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.css'],\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() label: string = '';\r\n  @Input() checked: boolean = false;\r\n\r\n  // For multi-select: the key value and bound array of selections\r\n  @Input() value: string = '';\r\n  @Input() selectedValues: string[] = [];\r\n\r\n  toggleSingle() {\r\n    this.checked = !this.checked;\r\n  }\r\n\r\n  toggleMultiple() {\r\n    const index = this.selectedValues.indexOf(this.value);\r\n    if (index > -1) {\r\n      this.selectedValues.splice(index, 1);\r\n    } else {\r\n      this.selectedValues.push(this.value);\r\n    }\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n\r\nlabel {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 0.5rem;\r\n    font-size: 1rem;\r\n    cursor: pointer;\r\n  }\r\n  input[type='checkbox'] {\r\n    width: 16px;\r\n    height: 16px;\r\n  }\r\n  \r\n\r\n  ",
+                    "styleUrl": "./checkbox.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<!-- Single Checkbox -->\r\n<div *ngIf=\"!value\">\r\n  <label class=\"custom-checkbox\">\r\n    <input type=\"checkbox\" [checked]=\"checked\" (change)=\"toggleSingle()\" />\r\n    <span class=\"checkbox-label\">{{ label }}</span>\r\n  </label>\r\n</div>\r\n\r\n<!-- Multiple Checkboxes (part of a group) -->\r\n<div *ngIf=\"value\">\r\n  <label class=\"custom-checkbox\">\r\n    <input\r\n      type=\"checkbox\"\r\n      [checked]=\"selectedValues.includes(value)\"\r\n      (change)=\"toggleMultiple()\"\r\n    />\r\n    <span class=\"checkbox-label\">{{ label }}</span>\r\n  </label>\r\n</div>\r\n"
+        },
+        {
+            "name": "DropdownComponent",
+            "id": "component-DropdownComponent-e3581204b093f667ad8bc3ee268cf9b114e406dd59a6440c654a62211292865bf0fc32e55d4ea9e4995d6446c549e247de59b0498cb8adfa3b4f7fc6b090b63f",
+            "file": "src/app/components/dropdown/dropdown.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-dropdown",
+            "styleUrls": [
+                "./dropdown.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dropdown.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "'Select an option'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "selected",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'ui-dropdown',\r\n  standalone: true,\r\n  imports: [CommonModule, FormsModule],\r\n  templateUrl: './dropdown.component.html',\r\n  styleUrls: ['./dropdown.component.css'],\r\n})\r\n\r\nexport class DropdownComponent {\r\n  @Input() label: string = '';\r\n  @Input() options: string[] = [];\r\n  @Input() selected: string = '';\r\n  @Input() placeholder: string = 'Select an option';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n\r\n.select-wrapper {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 4px;\r\n    font-family: sans-serif;\r\n  }\r\n  \r\n  .select-label {\r\n    margin-right :4px;\r\n    font-size: 1.2rem;\r\n    font-weight: 600;\r\n  }\r\n  \r\n  .select-field {\r\n    padding: 0.5rem;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n    transition: border-color 0.2s ease-in-out;\r\n  }\r\n\r\n\r\n  .select-field:focus,\r\n.select-field:not([value=\"\"]) {\r\n  border: 2px solid #007bff; /* Blue border */\r\n}\r\n\r\n.selected-border {\r\n    border: 2px solid #007bff; /* Blue border */\r\n  }",
+                    "styleUrl": "./dropdown.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"dropdown-container\">\r\n    <label class=\"select-label\">{{ label }}</label>\r\n    <select \r\n      [(ngModel)]=\"selected\" \r\n      [ngClass]=\"{ 'selected-border': selected }\"\r\n      class=\"select-field\"\r\n    >\r\n      <option [value]=\"''\" disabled selected hidden>{{ placeholder }}</option>\r\n      <option *ngFor=\"let option of options\" [value]=\"option\">{{ option }}</option>\r\n    </select>\r\n  </div>\r\n  "
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-48b9abe37706bc42f20cfa97ed9f943678344ea7d254c0c82183c657750c2191b43486fe730c778627b2ea6aa0e2f33a7abcf3ce08b68ad18b062ad99ea97acb",
             "file": "src/stories/header.component.ts",
@@ -393,6 +590,96 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "InputComponent",
+            "id": "component-InputComponent-31b56e21af6d02728946fbb547f0bc9bc60e2dc956dd324b26dd5a2fa2207a8a59266b93c057a95f84032a2e534cd9cb366387e05b3f3709c2f05652a1c017da",
+            "file": "src/app/components/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-input",
+            "styleUrls": [
+                "./input.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "error",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@Component({\r\n  standalone: true,\r\n  selector: 'ui-input',\r\n  imports: [CommonModule, FormsModule],\r\n  templateUrl: './input.component.html',\r\n  styleUrls: ['./input.component.css']\r\n})\r\nexport class InputComponent {\r\n  @Input() label: string = '';\r\n  @Input() placeholder: string = '';\r\n  @Input() error: string = '';\r\n  @Input() value: string = '';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n.input-wrapper {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 4px;\r\n    font-family: sans-serif;\r\n    width: 200px;\r\n  }\r\n  \r\n  .input-label {\r\n    font-size: 0.9rem;\r\n    font-weight: 600;\r\n  }\r\n  \r\n  .input-field {\r\n    padding: 0.5rem;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n  }\r\n  \r\n  .input-field:focus {\r\n    outline: none;\r\n    border-color: #007bff;\r\n  }\r\n  \r\n  .error-text {\r\n    color: red;\r\n    font-size: 0.8rem;\r\n  }\r\n  \r\n  .error-border {\r\n    border-color: red;\r\n  }\r\n  ",
+                    "styleUrl": "./input.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"input-wrapper\">\r\n    <label *ngIf=\"label\" class=\"input-label\">{{ label }}</label>\r\n    <input\r\n      type=\"text\"\r\n      class=\"input-field\"\r\n      [placeholder]=\"placeholder\"\r\n      [(ngModel)]=\"value\"\r\n      [ngClass]=\"{ 'error-border': error }\"\r\n    />\r\n    <p *ngIf=\"error\" class=\"error-text\">{{ error }}</p>\r\n  </div>\r\n  "
         },
         {
             "name": "PageComponent",
@@ -487,6 +774,303 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "RadioButtonComponent",
+            "id": "component-RadioButtonComponent-0dda7bd1ee2d60b8d7be90aa9e816a3be947f86235e14e08ef4c76677c8df7b77fb6b98609a04452c861f8ff8d77c6eb2347fd05e3cc4c81ff5c75d30bc58dfc",
+            "file": "src/app/components/radio-button/radio-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-radio-group",
+            "styleUrls": [
+                "./radio-button.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./radio-button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "selected",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "selectionChange",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onChange",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ui-radio-group',\r\n  standalone: true,\r\n  imports : [CommonModule],\r\n  templateUrl: './radio-button.component.html',\r\n  styleUrls: ['./radio-button.component.css']\r\n})\r\nexport class RadioButtonComponent {\r\n  @Input() label: string = '';\r\n  @Input() options: string[] = [];\r\n  @Input() selected: string = '';\r\n\r\n  @Output() selectionChange = new EventEmitter<string>();\r\n\r\n  onChange(value: string) {\r\n    this.selected = value;\r\n    this.selectionChange.emit(value);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n\r\n.radio-group {\r\n    display: flex;\r\n    flex-direction: column;\r\n    font-family: Arial, sans-serif;\r\n  }\r\n  \r\n  .group-label {\r\n    font-weight: 600;\r\n    margin-bottom: 0.5rem;\r\n  }\r\n  \r\n  .radio-option {\r\n    margin-bottom: 0.25rem;\r\n  }\r\n  \r\n  input[type='radio'] {\r\n    margin-right: 0.5rem;\r\n    accent-color: #007bff;\r\n  }\r\n  ",
+                    "styleUrl": "./radio-button.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "\r\n\r\n<div class=\"radio-group\">\r\n    <label class=\"group-label\">{{ label }}</label>\r\n    <div *ngFor=\"let option of options\" class=\"radio-option\">\r\n      <label>\r\n        <input\r\n          type=\"radio\"\r\n          name=\"radio-group\"\r\n          [value]=\"option\"\r\n          [checked]=\"selected === option\"\r\n          (change)=\"onChange(option)\"\r\n        />\r\n        {{ option }}\r\n      </label>\r\n    </div>\r\n  </div>\r\n  "
+        },
+        {
+            "name": "TextareaComponent",
+            "id": "component-TextareaComponent-55bab25b6ee820a027c95bef4f1585a876f76c967984147055927c82872cd40cf160232d6c16d29a9bb62fd6ecff65c5c2db9c989b4dd43da3e07a88a9a2c053",
+            "file": "src/app/components/textarea/textarea.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-textarea",
+            "styleUrls": [
+                "./textarea.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./textarea.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "error",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "rows",
+                    "defaultValue": "4",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FormsModule } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'ui-textarea',\r\n  standalone: true,\r\n  imports: [CommonModule, FormsModule],\r\n  templateUrl: './textarea.component.html',\r\n  styleUrls: ['./textarea.component.css']\r\n})\r\nexport class TextareaComponent {\r\n  @Input() label: string = '';\r\n  @Input() placeholder: string = '';\r\n  @Input() value: string = '';\r\n  @Input() error: string = '';\r\n  @Input() rows: number = 4;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n\r\n.textarea-wrapper {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 4px;\r\n    font-family: sans-serif;\r\n    width: 100%;\r\n  }\r\n  \r\n  .textarea-label {\r\n    font-size: 0.9rem;\r\n    font-weight: 600;\r\n  }\r\n  \r\n  .textarea-field {\r\n    padding: 0.5rem;\r\n    border: 1px solid #ccc;\r\n    border-radius: 4px;\r\n    font-size: 1rem;\r\n    resize: vertical;\r\n    min-height: 80px;\r\n  }\r\n  \r\n  .textarea-field:focus {\r\n    outline: none;\r\n    border-color: #007bff;\r\n  }\r\n  \r\n  .error-text {\r\n    color: red;\r\n    font-size: 0.8rem;\r\n  }\r\n  \r\n  .error-border {\r\n    border-color: red;\r\n  }\r\n  ",
+                    "styleUrl": "./textarea.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"textarea-wrapper\">\r\n    <label *ngIf=\"label\" class=\"textarea-label\">{{ label }}</label>\r\n    <textarea\r\n      class=\"textarea-field\"\r\n      [placeholder]=\"placeholder\"\r\n      [(ngModel)]=\"value\"\r\n      [rows]=\"rows\"\r\n      [ngClass]=\"{ 'error-border': error }\"\r\n    ></textarea>\r\n    <p *ngIf=\"error\" class=\"error-text\">{{ error }}</p>\r\n  </div>\r\n  "
+        },
+        {
+            "name": "ToggleComponent",
+            "id": "component-ToggleComponent-c461bda005737f55af22f5499b83e24e737344c3b1e642acd5a60c4b48aec952c9b3044ddb970ef71a624ab0c95ca18791772816b529fc3d6f036b2a613c204a",
+            "file": "src/app/components/toggle/toggle.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-toggle",
+            "styleUrls": [
+                "./toggle.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./toggle.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "changed",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "toggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ui-toggle',\r\n  templateUrl: './toggle.component.html',\r\n  styleUrls: ['./toggle.component.css']\r\n})\r\nexport class ToggleComponent {\r\n  @Input() label: string = '';\r\n  @Input() checked: boolean = false;\r\n  @Output() changed = new EventEmitter<boolean>();\r\n\r\n  toggle() {\r\n    this.checked = !this.checked;\r\n    this.changed.emit(this.checked);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n\r\n.toggle-wrapper {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 1rem;\r\n    font-family: Arial, sans-serif;\r\n  }\r\n  \r\n  .toggle-label {\r\n    font-weight: 500;\r\n  }\r\n  \r\n  .switch {\r\n    position: relative;\r\n    display: inline-block;\r\n    width: 44px;\r\n    height: 24px;\r\n  }\r\n  \r\n  .switch input {\r\n    opacity: 0;\r\n    width: 0;\r\n    height: 0;\r\n  }\r\n  \r\n  .slider {\r\n    position: absolute;\r\n    cursor: pointer;\r\n    background-color: #ccc;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    transition: 0.4s;\r\n    border-radius: 24px;\r\n  }\r\n  \r\n  .slider:before {\r\n    position: absolute;\r\n    content: '';\r\n    height: 18px;\r\n    width: 18px;\r\n    left: 3px;\r\n    bottom: 3px;\r\n    background-color: white;\r\n    transition: 0.4s;\r\n    border-radius: 50%;\r\n  }\r\n  \r\n  input:checked + .slider {\r\n    background-color: #007bff;\r\n  }\r\n  \r\n  input:checked + .slider:before {\r\n    transform: translateX(20px);\r\n  }\r\n  ",
+                    "styleUrl": "./toggle.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"toggle-wrapper\">\r\n    <label class=\"toggle-label\">{{ label }}</label>\r\n    <label class=\"switch\">\r\n      <input type=\"checkbox\" [checked]=\"checked\" (change)=\"toggle()\" />\r\n      <span class=\"slider round\"></span>\r\n    </label>\r\n  </div>\r\n  "
         }
     ],
     "modules": [],
@@ -526,7 +1110,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 11,
+        "count": 6,
         "status": "low",
         "files": [
             {
@@ -553,6 +1137,60 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/checkbox/checkbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/dropdown/dropdown.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DropdownComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/input/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/radio-button/radio-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RadioButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/textarea/textarea.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextareaComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toggle/toggle.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ToggleComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
                 "status": "low"
