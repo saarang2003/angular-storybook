@@ -1,0 +1,38 @@
+
+
+.textarea-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: sans-serif;
+    width: 100%;
+  }
+  
+  .textarea-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .textarea-field {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  .textarea-field:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .error-text {
+    color: red;
+    font-size: 0.8rem;
+  }
+  
+  .error-border {
+    border-color: red;
+  }
+  
