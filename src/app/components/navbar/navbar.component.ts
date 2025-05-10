@@ -10,6 +10,7 @@ import { Component, Input, HostListener } from '@angular/core';
 })
 export class NavbarComponent {
   @Input() title: string = 'Navbar';
+  @Input() imageSrc: string = '';
   isMobile: boolean = false;
   isMenuOpen: boolean = false;
 

@@ -2,8 +2,8 @@
 <ng-container *ngIf="isMobile">
   <div class="navbar-mobile">
     <div class="navbar-mobile__header">
-      <img src="../../assets/logo.png" alt="Logo" class="logo" />
-      <span class="title">{{ title }}</span>
+      <img [src]="imageSrc" alt="Logo" class="logo" />
+     <span class="title" *ngIf="!isMobile && title">{{ title }}</span>
       <button (click)="toggleMenu()" class="menu-toggle">
         <span *ngIf="!isMenuOpen">☰</span>
         <span *ngIf="isMenuOpen">✖</span>
@@ -22,8 +22,8 @@
 <ng-container *ngIf="!isMobile">
   <nav class="navbar">
     <div class="navbar__logo-section">
-      <img src="../../assets/logo.png" alt="Logo" class="logo" />
-      <span class="title">{{ title }}</span>
+      <img [src]="imageSrc" alt="Logo" class="logo" />
+     <span class="title" *ngIf="!isMobile && title">{{ title }}</span>
     </div>
     <ul class="navbar__links">
       <li><a routerLink="/home" class="navbar__link">Home</a></li>

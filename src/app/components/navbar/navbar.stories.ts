@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 export default {
   title: 'Components/Navbar',
   component: NavbarComponent,
+  imports: [CommonModule],
   argTypes: {
     title: {
       control: 'text',
@@ -20,15 +21,13 @@ const Template: StoryFn<NavbarComponent> = (args: NavbarComponent) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  title: 'EDUCATION INITIATIVE'
+  title: 'EDUCATION INITIATIVE',
+   imageSrc: 'src/app/assets/logo.png',
 };
 
-export const LongTitle = Template.bind({});
-LongTitle.args = {
-  title: 'EDUCATION INITIATIVE - Empowering Students Worldwide'
+export const LogoOnly = Template.bind({});
+LogoOnly.args = {
+  title: '' ,
+   imageSrc: 'src/app/assets/logo.png',
 };
 
-export const ShortTitle = Template.bind({});
-ShortTitle.args = {
-  title: 'EI'
-};
