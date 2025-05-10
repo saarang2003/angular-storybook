@@ -1,5 +1,6 @@
 import { Meta, StoryFn } from '@storybook/angular';
 import { ButtonComponent } from './button.component';
+import { CommonModule } from '@angular/common';
 
 export default {
   title: 'Components/Button',
@@ -16,6 +17,9 @@ export default {
 
 const Template: StoryFn<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
+  moduleMetadata : {
+    imports : [CommonModule],
+  }
 });
 
 export const Primary = Template.bind({});

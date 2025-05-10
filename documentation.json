@@ -310,7 +310,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-68958a32fc18affc4dc53c758b5bf1ec8cc369b3709ab80df3cdbdea485d57ba19f11915b6283d0c5274623ddcc258b1a9978d56d4f09bfec6bec83bbc2af5d7",
+            "id": "component-CheckboxComponent-d06bfd38e49105b1314af214509d49f0c313c9132fc2010b58f896a58d725d8b0784047b99137981c8925125b9bd17ee2b88247e1d914fe3f4ed3d08b996e7a4",
             "file": "src/app/components/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -333,7 +333,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 15,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -342,7 +342,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 },
@@ -351,7 +351,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 19,
                     "type": "string[]",
                     "decorators": []
                 },
@@ -360,7 +360,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 }
@@ -374,7 +374,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -384,7 +384,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -403,7 +403,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ui-checkbox',\r\n  imports : [CommonModule],\r\n  standalone: true,\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.css'],\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() label: string = '';\r\n  @Input() checked: boolean = false;\r\n\r\n  // For multi-select: the key value and bound array of selections\r\n  @Input() value: string = '';\r\n  @Input() selectedValues: string[] = [];\r\n\r\n  toggleSingle() {\r\n    this.checked = !this.checked;\r\n  }\r\n\r\n  toggleMultiple() {\r\n    const index = this.selectedValues.indexOf(this.value);\r\n    if (index > -1) {\r\n      this.selectedValues.splice(index, 1);\r\n    } else {\r\n      this.selectedValues.push(this.value);\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ui-checkbox',\r\n  imports : [CommonModule],\r\n  standalone: true,\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.css'],\r\n})\r\n\r\n\r\nexport class CheckboxComponent {\r\n  @Input() label: string = '';\r\n  @Input() checked: boolean = false;\r\n\r\n  // For multi-select: the key value and bound array of selections\r\n  @Input() value: string = '';\r\n  @Input() selectedValues: string[] = [];\r\n\r\n  toggleSingle() {\r\n    this.checked = !this.checked;\r\n  }\r\n\r\n  toggleMultiple() {\r\n    const index = this.selectedValues.indexOf(this.value);\r\n    if (index > -1) {\r\n      this.selectedValues.splice(index, 1);\r\n    } else {\r\n      this.selectedValues.push(this.value);\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -680,6 +680,142 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<div class=\"input-wrapper\">\r\n    <label *ngIf=\"label\" class=\"input-label\">{{ label }}</label>\r\n    <input\r\n      type=\"text\"\r\n      class=\"input-field\"\r\n      [placeholder]=\"placeholder\"\r\n      [(ngModel)]=\"value\"\r\n      [ngClass]=\"{ 'error-border': error }\"\r\n    />\r\n    <p *ngIf=\"error\" class=\"error-text\">{{ error }}</p>\r\n  </div>\r\n  "
+        },
+        {
+            "name": "NavbarComponent",
+            "id": "component-NavbarComponent-86f4a7c3f6efea33f68a3909afe58318ae60b3396f3333b0d0d1a84db620ef26487e54e086002c743df063d972a18f6e251ea088a8cd6da897e617e15939fcc2",
+            "file": "src/app/components/navbar/navbar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-navbar",
+            "styleUrls": [
+                "./navbar.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./navbar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'Navbar'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isMenuOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "isMobile",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "checkViewport",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onResize",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:resize', undefined"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                },
+                {
+                    "name": "toggleMenu",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "window:resize",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19
+                }
+            ],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, HostListener } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-navbar',\r\n  standalone: true,\r\n  templateUrl: './navbar.component.html',\r\n  styleUrls: ['./navbar.component.css']\r\n})\r\nexport class NavbarComponent {\r\n  @Input() title: string = 'Navbar';\r\n  isMobile: boolean = false;\r\n  isMenuOpen: boolean = false;\r\n\r\n  ngOnInit() {\r\n    this.checkViewport();\r\n  }\r\n\r\n  @HostListener('window:resize', [])\r\n  onResize() {\r\n    this.checkViewport();\r\n  }\r\n\r\n  checkViewport() {\r\n    this.isMobile = window.innerWidth < 768;\r\n    if (!this.isMobile) this.isMenuOpen = false;\r\n  }\r\n\r\n  toggleMenu() {\r\n    this.isMenuOpen = !this.isMenuOpen;\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/* General Styles */\r\n.logo {\r\n  height: 40px;\r\n  width: auto;\r\n  margin-right: 10px;\r\n}\r\n\r\n.title {\r\n  font-size: 1.2rem;\r\n  font-weight: bold;\r\n  color: #2c3e50;\r\n}\r\n\r\n/* Desktop Navbar */\r\n.navbar {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  background-color: #ffffff;\r\n  padding: 10px 20px;\r\n  border-bottom: 1px solid #ddd;\r\n  box-shadow: 0 2px 4px rgba(0,0,0,0.1);\r\n}\r\n\r\n.navbar__logo-section {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.navbar__links {\r\n  display: flex;\r\n  gap: 20px;\r\n  list-style: none;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\n.navbar__link {\r\n  text-decoration: none;\r\n  color: #34495e;\r\n  font-weight: 500;\r\n  transition: color 0.3s;\r\n}\r\n\r\n.navbar__link:hover {\r\n  color: #2980b9;\r\n}\r\n\r\n/* Mobile Navbar */\r\n.navbar-mobile {\r\n  background-color: #ffffff;\r\n  padding: 10px 20px;\r\n  border-bottom: 1px solid #ddd;\r\n}\r\n\r\n.navbar-mobile__header {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.menu-toggle {\r\n  background: none;\r\n  border: none;\r\n  font-size: 1.8rem;\r\n  cursor: pointer;\r\n}\r\n\r\n.navbar-mobile__dropdown {\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 10px 0;\r\n}\r\n\r\n.navbar-mobile__dropdown .navbar__link {\r\n  padding: 10px 0;\r\n  color: #34495e;\r\n  text-decoration: none;\r\n  font-weight: 500;\r\n  transition: color 0.3s;\r\n}\r\n\r\n.navbar-mobile__dropdown .navbar__link:hover {\r\n  color: #2980b9;\r\n}\r\n\r\n/* Responsive Breakpoint Example */\r\n@media (min-width: 768px) {\r\n  .navbar-mobile {\r\n    display: none;\r\n  }\r\n\r\n  .navbar {\r\n    display: flex;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./navbar.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<!-- Mobile Navbar -->\r\n<ng-container *ngIf=\"isMobile\">\r\n  <div class=\"navbar-mobile\">\r\n    <div class=\"navbar-mobile__header\">\r\n      <img src=\"../../../assets/edilogo.webp\" alt=\"Logo\" class=\"logo\" />\r\n      <span class=\"title\">{{ title }}</span>\r\n      <button (click)=\"toggleMenu()\" class=\"menu-toggle\">\r\n        <span *ngIf=\"!isMenuOpen\">☰</span>\r\n        <span *ngIf=\"isMenuOpen\">✖</span>\r\n      </button>\r\n    </div>\r\n\r\n    <div *ngIf=\"isMenuOpen\" class=\"navbar-mobile__dropdown\">\r\n      <a routerLink=\"/home\" class=\"navbar__link\">Home</a>\r\n      <a routerLink=\"/about\" class=\"navbar__link\">About</a>\r\n      <a routerLink=\"/contact\" class=\"navbar__link\">Contact</a>\r\n    </div>\r\n  </div>\r\n</ng-container>\r\n\r\n<!-- Desktop Navbar -->\r\n<ng-container *ngIf=\"!isMobile\">\r\n  <nav class=\"navbar\">\r\n    <div class=\"navbar__logo-section\">\r\n      <img src=\"../../../assets/edilogo.webp\" alt=\"Logo\" class=\"logo\" />\r\n      <span class=\"title\">{{ title }}</span>\r\n    </div>\r\n    <ul class=\"navbar__links\">\r\n      <li><a routerLink=\"/home\" class=\"navbar__link\">Home</a></li>\r\n      <li><a routerLink=\"/about\" class=\"navbar__link\">About</a></li>\r\n      <li><a routerLink=\"/contact\" class=\"navbar__link\">Contact</a></li>\r\n    </ul>\r\n  </nav>\r\n</ng-container>\r\n"
         },
         {
             "name": "PageComponent",
@@ -1110,7 +1246,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 6,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -1166,6 +1302,15 @@
                 "name": "InputComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/navbar/navbar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavbarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
