@@ -1,6 +1,6 @@
 
 
-import { Meta, StoryFn } from '@storybook/angular';
+import { Meta, StoryObj } from '@storybook/angular';
 import { TextareaComponent } from './textarea.component';
 
 export default {
@@ -16,24 +16,25 @@ export default {
     tags : ['autodocs']
 } as Meta;
 
-const Template: StoryFn = (args) => ({
-  component: TextareaComponent,
-  props: args
-});
 
-export const Default = Template.bind({});
-Default.args = {
+
+export const Default : StoryObj<TextareaComponent> = {
+  args : {
   label: 'Comment',
   placeholder: 'Write your comment here...',
   value: '',
   rows: 4
+  }
 };
 
-export const WithError = Template.bind({});
-WithError.args = {
+
+export const WithError : StoryObj<TextareaComponent>= {
+  args : {
   label: 'Message',
   placeholder: 'Enter your message...',
   value: '',
   error: 'Message cannot be empty',
-  rows: 5
-};
+  rows: 5 
+  }
+}
+

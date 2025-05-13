@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from '@storybook/angular';
+import { Meta, StoryFn  , StoryObj} from '@storybook/angular';
 import { NavbarComponent } from './navbar.component';
 import { CommonModule } from '@angular/common';
 
@@ -21,15 +21,18 @@ const Template: StoryFn<NavbarComponent> = (args: NavbarComponent) => ({
   props: args,
 });
 
-export const Default = Template.bind({});
-Default.args = {
-  title: 'EDUCATION INITIATIVE',
+export const Default : StoryObj<NavbarComponent> = {
+  args : {
+    title: 'EDUCATION INITIATIVE',
    imageSrc: 'https://ei.study/wp-content/uploads/2022/10/edilogo.png',
-};
+  }
+}
 
-export const LogoOnly = Template.bind({});
-LogoOnly.args = {
-  title: '' ,
+
+export const LogoOnly : StoryObj<NavbarComponent> ={
+  args : {
+     title: '' ,
    imageSrc: 'https://ei.study/wp-content/uploads/2022/10/edilogo.png',
-};
+  }
+}
 
