@@ -1,6 +1,4 @@
-
-
-import { Meta, StoryFn } from '@storybook/angular';
+import { Meta, StoryObj } from '@storybook/angular';
 import { ToggleComponent } from './toggle.component';
 import { moduleMetadata } from '@storybook/angular';
 
@@ -16,21 +14,19 @@ export default {
     label: { control: 'text' },
     checked: { control: 'boolean' },
   },
-    tags : ['autodocs']
+  tags: ['autodocs'],
 } as Meta<ToggleComponent>;
 
-const Template: StoryFn<ToggleComponent> = (args) => ({
-  props: args,
-});
-
-export const Off = Template.bind({});
-Off.args = {
-  label: 'Enable Notifications',
-  checked: false,
+export const Off: StoryObj<ToggleComponent> = {
+  args: {
+    label: 'Enable Notifications',
+    checked: false,
+  },
 };
 
-export const On = Template.bind({});
-On.args = {
-  label: 'Enable Notifications',
-  checked: true,
+export const On: StoryObj<ToggleComponent> = {
+  args: {
+    label: 'Enable Notifications',
+    checked: true,
+  },
 };
