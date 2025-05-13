@@ -1298,6 +1298,71 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<div class=\"toggle-wrapper\">\r\n    <label class=\"toggle-label\">{{ label }}</label>\r\n    <label class=\"switch\">\r\n      <input type=\"checkbox\" [checked]=\"checked\" (change)=\"toggle()\" />\r\n      <span class=\"slider round\"></span>\r\n    </label>\r\n  </div>\r\n  "
+        },
+        {
+            "name": "TooltipComponent",
+            "id": "component-TooltipComponent-86c432eed38d5e56f5242ac49fc29078ccb6b46a78097429fe5271813e3d6028767dc70b2c6bfecee4cea3698f6618ed22d2b6f2129a12a17d20975c91eaece6",
+            "file": "src/app/components/secondary/tooltip/tooltip.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tooltip",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./tooltip.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "show",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-tooltip',\r\n  standalone : true,\r\n  imports: [CommonModule],\r\n  templateUrl: './tooltip.component.html',\r\n  styleUrl: './tooltip.component.css'\r\n})\r\n\r\nexport class TooltipComponent {\r\n  @Input() title : string = '';\r\n   show = false;\r\n}\r\n",
+            "styleUrl": "./tooltip.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": " <div class=\"tooltip-wrapper\" (mouseenter)=\"show = true\" (mouseleave)=\"show = false\">\r\n      <ng-content></ng-content>\r\n      <div class=\"tooltip\" *ngIf=\"show\">{{ title }}</div>\r\n    </div>"
         }
     ],
     "modules": [],
@@ -1420,6 +1485,15 @@
                 "name": "AvatarComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/secondary/tooltip/tooltip.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TooltipComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

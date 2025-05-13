@@ -1,0 +1,6 @@
+ <div class="main">
+     <div class="tooltip-wrapper" (mouseenter)="show = true" (mouseleave)="show = false">
+          <ng-content></ng-content>
+          <div class="tooltip" *ngIf="show">{{ title }}</div>
+        </div>
+ </div>
