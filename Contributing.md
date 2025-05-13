@@ -1,104 +1,91 @@
-⚙️ Angular UI Component Library with Storybook
-A scalable and maintainable UI library built using Angular, styled with SCSS, and documented with Storybook for isolated development and visual testing.
+# 🙌 Contributing to Angular UI Component Library
 
-📌 Features
-🧩 Reusable UI components (Button, Modal, Input, etc.)
+Thank you for your interest in contributing to our scalable and maintainable UI component library built with **Angular**, styled with **SCSS**, and documented using **Storybook**! This guide outlines the steps to contribute effectively.
 
-🖼️ Storybook-powered visual documentation
+## 📌 How to Contribute
 
-🧪 Isolated component previews and testing
+### 1. Read the Guidelines
+- Familiarize yourself with the project by reviewing the [README.md](./README.md) file.
+- Ensure your contributions align with the project's goals of scalability, consistency, and developer experience.
 
-🎨 Modular styling using SCSS
+### 2. Fork the Repository
+- Fork the repository to your GitHub account by clicking the "Fork" button on the [project page](https://github.com/your-username/ui-library.git).
+- Clone your fork locally:
+  ```bash
+  git clone https://github.com/your-username/ui-library.git
+  cd ui-library
+  ```
 
-📷 Optional Chromatic integration for visual regression testing
+### 3. Create a Feature Branch
+- Create a new branch for your feature or bug fix:
+  ```bash
+  git checkout -b feature/your-feature-name
+  ```
+- Use descriptive branch names (e.g., `feature/add-tooltip-component`, `fix/button-alignment`).
 
-📁 Project Structure
-css
-Copy
-Edit
-src/
-├── app/
-│   └── components/
-│       ├── button/
-│       ├── checkbox/
-│       ├── dropdown/
-│       ├── input/
-│       └── textarea/
-├── stories/
-│   ├── assets/
-│   └── page.stories.ts
-.storybook/
-├── main.ts
-└── preview.ts
-🛠️ Getting Started
-Clone the repository
+### 4. Develop Your Contribution
+- **Add a Component**:
+  1. Create a new folder in `src/app/components/your-component-name`.
+  2. Add the following files:
+     - `your-component.component.ts`
+     - `your-component.component.html`
+     - `your-component.component.scss`
+  3. Create `your-component.stories.ts` in the same folder for Storybook integration.
+  4. Test your component locally:
+     ```bash
+     npm run storybook
+     ```
+     Open http://localhost:6006 to preview.
 
-bash
-Copy
-Edit
-git clone https://github.com/your-username/ui-library.git
-cd ui-library
-Install dependencies
+- **Follow Coding Standards**:
+  - Use **TypeScript** for Angular components.
+  - Style with **SCSS** and follow the project's theming conventions.
+  - Ensure components are reusable and modular.
+  - Write clear, concise **Storybook stories** for documentation.
 
-nginx
-Copy
-Edit
-npm install
-Run Storybook
+### 5. Test Your Changes
+- Run Storybook to verify your component renders correctly:
+  ```bash
+  npm run storybook
+  ```
+- (Optional) If using Chromatic, run visual regression tests:
+  ```bash
+  npx chromatic --project-token=<your-token>
+  ```
+  or
+  ```bash
+  npm run chromatic
+  ```
 
-arduino
-Copy
-Edit
-npm run storybook
-Then open your browser and go to: http://localhost:6006
+### 6. Commit Your Changes
+- Write clear, concise commit messages:
+  ```bash
+  git commit -m "Add tooltip component with Storybook integration"
+  ```
+- Push your branch to your fork:
+  ```bash
+  git push origin feature/your-feature-name
+  ```
 
-➕ Adding a New Component
-Create a new folder inside src/app/components/your-component-name
+### 7. Submit a Pull Request
+- Open a pull request (PR) from your feature branch to the `dev` branch of the main repository.
+- Include a clear description of your changes, referencing any related issues.
+- Ensure your PR passes any automated checks (e.g., linting, tests).
 
-Add the following files:
+## 📜 Code of Conduct
+- Be respectful and inclusive in all interactions.
+- Follow the project's coding standards and conventions.
+- Provide constructive feedback during code reviews.
 
-your-component.component.ts
+## 📦 Tech Stack
+- **Framework**: Angular
+- **Language**: TypeScript
+- **Styling**: SCSS
+- **Docs & Testing**: Storybook, Chromatic (optional)
 
-your-component.component.html
+## ✅ Project Milestones
+- Contributions should align with the project's milestones, such as adding new components or enhancing Storybook documentation.
 
-your-component.component.scss
+---
 
-Create your-component.stories.ts in the same folder
-
-Run Storybook to preview:
-
-arduino
-Copy
-Edit
-npm run storybook
-📸 Chromatic Integration (Optional)
-To enable cloud previews and visual regression testing:
-
-lua
-Copy
-Edit
-npx chromatic --project-token=<your-token>
-Or use the shortcut:
-
-arduino
-Copy
-Edit
-npm run chromatic
-🙌 Contributing
-Read the CONTRIBUTING.md file
-
-Fork the repository
-
-Create a feature branch
-
-Submit a pull request to the dev branch
-
-📦 Tech Stack
-Framework: Angular
-
-Language: TypeScript
-
-Styling: SCSS
-
-Docs & Testing: Storybook, Chromatic (optional)
-
+Thank you for helping make this UI component library better! 🚀

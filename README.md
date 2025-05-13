@@ -96,7 +96,7 @@ We welcome contributions! To get started:
 - ✅ 5+ components added and documented
 - ✅ Theming configured
 - ✅ README completed
-- ⬜ Chromatic integration (optional)
+- ✅ Chromatic integration (optional)
 
 ## 📦 Tech Stack
 
