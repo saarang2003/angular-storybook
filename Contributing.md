@@ -1,63 +1,104 @@
-# 🤝 Contributing Guide
+⚙️ Angular UI Component Library with Storybook
+A scalable and maintainable UI library built using Angular, styled with SCSS, and documented with Storybook for isolated development and visual testing.
 
-Thank you for considering contributing to our Angular UI Component Library! 🎉
+📌 Features
+🧩 Reusable UI components (Button, Modal, Input, etc.)
 
-## 🧠 General Guidelines
+🖼️ Storybook-powered visual documentation
 
-- ✅ **Assign the issue** to yourself before starting, to avoid duplication.
-- 💬 Keep **all discussions inside the issue thread** for clarity and shared context.
-- 💡 Want to suggest a new feature or improvement? **Create a new issue** and assign it to yourself if you plan to work on it.
+🧪 Isolated component previews and testing
 
----
+🎨 Modular styling using SCSS
 
-## 🛠️ Contribution Workflow
+📷 Optional Chromatic integration for visual regression testing
 
-### 1. Fork & Clone the Repository
-```bash
-git clone https://github.com/<your-username>/ui-library.git
-cd ui-library
-
-
-2. Create a Feature Branch
-🚫 Never work directly on main or dev.
+📁 Project Structure
+css
+Copy
+Edit
+src/
+├── app/
+│   └── components/
+│       ├── button/
+│       ├── checkbox/
+│       ├── dropdown/
+│       ├── input/
+│       └── textarea/
+├── stories/
+│   ├── assets/
+│   └── page.stories.ts
+.storybook/
+├── main.ts
+└── preview.ts
+🛠️ Getting Started
+Clone the repository
 
 bash
 Copy
 Edit
-git checkout dev
-git pull origin dev
-git checkout -b "<your-name>/dev/<feature-name>"
-3. Make Changes
-Create your component inside src/app/components/your-component
+git clone https://github.com/your-username/ui-library.git
+cd ui-library
+Install dependencies
 
-Add .stories.ts for the component
-
-Follow naming conventions and existing architecture
-
-4. Preview Changes
-bash
+nginx
 Copy
 Edit
 npm install
+Run Storybook
+
+arduino
+Copy
+Edit
 npm run storybook
-📍 Storybook should open at: http://localhost:6006
+Then open your browser and go to: http://localhost:6006
 
-5. Raise a Pull Request
-PR should target dev branch
+➕ Adding a New Component
+Create a new folder inside src/app/components/your-component-name
 
-Add before/after screenshots
+Add the following files:
 
-Reference the related issue with Fixes #issue_number
+your-component.component.ts
 
-Use descriptive PR titles and summaries
+your-component.component.html
 
-✅ Done? Review This Checklist:
- Branch is up-to-date with dev
+your-component.component.scss
 
- Story is working and viewable in Storybook
+Create your-component.stories.ts in the same folder
 
- No broken styles or console errors
+Run Storybook to preview:
 
- PR description includes screenshots
+arduino
+Copy
+Edit
+npm run storybook
+📸 Chromatic Integration (Optional)
+To enable cloud previews and visual regression testing:
 
- Issue is linked and assigned
+lua
+Copy
+Edit
+npx chromatic --project-token=<your-token>
+Or use the shortcut:
+
+arduino
+Copy
+Edit
+npm run chromatic
+🙌 Contributing
+Read the CONTRIBUTING.md file
+
+Fork the repository
+
+Create a feature branch
+
+Submit a pull request to the dev branch
+
+📦 Tech Stack
+Framework: Angular
+
+Language: TypeScript
+
+Styling: SCSS
+
+Docs & Testing: Storybook, Chromatic (optional)
+
