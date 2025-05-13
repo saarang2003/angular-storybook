@@ -223,7 +223,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-6aa7b4e18c49d245f232040b1e6aade59492cb802f7c34b85973b659ad0380fd3af555c187d74bd6bd65336921dc01da6dd123f10106580ae1d218a91d3f8dcf-1",
+            "id": "component-ButtonComponent-1d0a44385b0e97acecfdf81137b82dc52efd6ee06ebe15b64d0f3b3987caa261cec57739f0cadac5dfc01a1efb112c8e631d6f71b45f6d424a95e069a0d7c346-1",
             "file": "src/app/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -235,7 +235,7 @@
                 "./button.component.css"
             ],
             "styles": [],
-            "template": "<button\n  [disabled]=\"disabled || loading\"\n  [ngClass]=\"[\n    variant,\n    disabled ? 'disabled' : '',\n    loading ? 'loading' : ''\n  ]\"\n>\n  <ng-container *ngIf=\"loading; else labelTpl\">\n    <span class=\"loader\"></span>\n  </ng-container>\n  <ng-template #labelTpl>{{ label }}</ng-template>\n</button>\n",
+            "template": "<button\n  [disabled]=\"disabled || loading\"\n  [ngClass]=\"[\n    variant,\n    disabled ? 'disabled' : '',\n    loading ? 'loading' : ''\n  ]\"\n   (click)=\"handleClick()\"\n>\n  <ng-container *ngIf=\"loading; else labelTpl\">\n    <span class=\"loader\"></span>\n  </ng-container>\n  <ng-template #labelTpl>{{ label }}</ng-template>\n</button>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -245,7 +245,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 33,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -254,7 +254,7 @@
                     "defaultValue": "'Button'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 30,
                     "type": "string",
                     "decorators": []
                 },
@@ -263,7 +263,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
+                    "line": 32,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -272,14 +272,34 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 31,
                     "type": "\"primary\" | \"secondary\" | \"danger\"",
                     "decorators": []
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "action",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "handleClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -294,7 +314,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  standalone: true,\r\n  imports: [CommonModule], \r\n  template: `\r\n    <button\r\n      [disabled]=\"disabled || loading\"\r\n      [ngClass]=\"[\r\n        variant,\r\n        disabled ? 'disabled' : '',\r\n        loading ? 'loading' : ''\r\n      ]\"\r\n    >\r\n      <ng-container *ngIf=\"loading; else labelTpl\">\r\n        <span class=\"loader\"></span>\r\n      </ng-container>\r\n      <ng-template #labelTpl>{{ label }}</ng-template>\r\n    </button>\r\n  `,\r\n  styleUrls: ['./button.component.css']\r\n})\r\n\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() variant: 'primary' | 'secondary' | 'danger' = 'primary';\r\n  @Input() loading = false;\r\n  @Input() disabled = false;\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  standalone: true,\r\n  imports: [CommonModule], \r\n  template: `\r\n    <button\r\n      [disabled]=\"disabled || loading\"\r\n      [ngClass]=\"[\r\n        variant,\r\n        disabled ? 'disabled' : '',\r\n        loading ? 'loading' : ''\r\n      ]\"\r\n       (click)=\"handleClick()\"\r\n    >\r\n      <ng-container *ngIf=\"loading; else labelTpl\">\r\n        <span class=\"loader\"></span>\r\n      </ng-container>\r\n      <ng-template #labelTpl>{{ label }}</ng-template>\r\n    </button>\r\n  `,\r\n  styleUrls: ['./button.component.css']\r\n})\r\n\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() variant: 'primary' | 'secondary' | 'danger' = 'primary';\r\n  @Input() loading = false;\r\n  @Input() disabled = false;\r\n\r\n @Output() action = new EventEmitter<void>();\r\n\r\n   handleClick() {\r\n    if (!this.disabled && !this.loading) {\r\n      this.action.emit(); // Emit the action event\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1288,7 +1308,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {

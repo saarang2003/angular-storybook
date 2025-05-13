@@ -1,4 +1,4 @@
-import { Component, Input, NgModule } from '@angular/core';
+import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
         disabled ? 'disabled' : '',
         loading ? 'loading' : ''
       ]"
+       (click)="handleClick()"
     >
       <ng-container *ngIf="loading; else labelTpl">
         <span class="loader"></span>
@@ -30,4 +31,12 @@ export class ButtonComponent {
   @Input() variant: 'primary' | 'secondary' | 'danger' = 'primary';
   @Input() loading = false;
   @Input() disabled = false;
+
+ @Output() action = new EventEmitter<void>();
+
+   handleClick() {
+    if (!this.disabled && !this.loading) {
+      this.action.emit(); // Emit the action event
+    }
+  }
 }

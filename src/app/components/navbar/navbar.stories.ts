@@ -2,6 +2,7 @@ import { Meta, StoryFn } from '@storybook/angular';
 import { NavbarComponent } from './navbar.component';
 import { CommonModule } from '@angular/common';
 
+
 export default {
   title: 'Components/Navbar',
   component: NavbarComponent,
@@ -12,7 +13,8 @@ export default {
       description: 'Title of the navbar',
       defaultValue: 'EDUCATION INITIATIVE'
     }
-  }
+  },
+  tags : ['autodocs']
 } as Meta<NavbarComponent>;
 
 const Template: StoryFn<NavbarComponent> = (args: NavbarComponent) => ({
@@ -22,12 +24,12 @@ const Template: StoryFn<NavbarComponent> = (args: NavbarComponent) => ({
 export const Default = Template.bind({});
 Default.args = {
   title: 'EDUCATION INITIATIVE',
-   imageSrc: 'src/app/assets/logo.png',
+   imageSrc: 'https://ei.study/wp-content/uploads/2022/10/edilogo.png',
 };
 
 export const LogoOnly = Template.bind({});
 LogoOnly.args = {
   title: '' ,
-   imageSrc: 'src/app/assets/logo.png',
+   imageSrc: 'https://ei.study/wp-content/uploads/2022/10/edilogo.png',
 };
 
