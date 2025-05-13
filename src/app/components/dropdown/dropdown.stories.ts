@@ -14,6 +14,7 @@ const meta: Meta = {
         control: { type: 'object' },
       },
     },
+      tags : ['autodocs']
   };
   
   export default meta;

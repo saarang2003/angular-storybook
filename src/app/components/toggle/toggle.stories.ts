@@ -16,6 +16,7 @@ export default {
     label: { control: 'text' },
     checked: { control: 'boolean' },
   },
+    tags : ['autodocs']
 } as Meta<ToggleComponent>;
 
 const Template: StoryFn<ToggleComponent> = (args) => ({

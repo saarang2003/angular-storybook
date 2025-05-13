@@ -12,7 +12,8 @@ export default {
     value: { control: 'text' },
     error: { control: 'text' },
     rows: { control: 'number' }
-  }
+  },
+    tags : ['autodocs']
 } as Meta;
 
 const Template: StoryFn = (args) => ({

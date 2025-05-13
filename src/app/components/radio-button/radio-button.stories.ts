@@ -17,6 +17,7 @@ export default {
     options: { control: 'object' },
     selected: { control: 'text' },
   },
+    tags : ['autodocs']
 } as Meta<RadioButtonComponent>;
 
 const Template: StoryFn<RadioButtonComponent> = (args) => ({

@@ -20,6 +20,7 @@ export default {
     label: { control: 'text' },
     checked: { control: 'boolean' },
   },
+    tags : ['autodocs']
 } as Meta;
 
 const Template: StoryFn = (args) => ({

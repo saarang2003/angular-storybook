@@ -14,6 +14,7 @@ export default {
     loading: { control: 'boolean' },
     disabled: { control: 'boolean' },
   },
+  tags : ['autodocs']
 } as Meta;
 
 const Template: StoryFn<ButtonComponent> = (args) => ({
