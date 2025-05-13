@@ -1,102 +1,84 @@
+⚙️ Angular UI Component Library with Storybook
+A scalable and maintainable UI component library built using Angular, styled with SCSS, and powered by Storybook for isolated component development, testing, and visual documentation.
+📌 Features
 
----
+🧩 Reusable and modular UI components (e.g., Button, Modal, Input)
+🖼️ Visual documentation and live previews via Storybook
+🧪 Isolated component testing and development
+🎨 SCSS-based styling for full theming flexibility
+📷 Optional integration with Chromatic for visual regression testing
 
-### ✅ `README.md`
-
-```md
-# ⚙️ Angular UI Component Library with Storybook
-
-A scalable and maintainable UI component library built with **Angular**, styled with **SCSS**, and powered by **Storybook** for isolated component development, testing, and documentation.
-
----
-
-## 📌 Features
-
-- 🧩 Reusable UI components (e.g., Button, Modal, Card, etc.)
-- 🖼️ Visual documentation with Storybook
-- 🧪 Component previews and isolated testing
-- 🎨 SCSS for modular styling
-- 📷 Chromatic (optional) for visual regression testing
-
----
-
-## 📁 Project Structure
-
+📁 Project Structure
 src/
 ├── app/
-│ └── components/
-│ ├── button/
-│ ├── checkbox/
-│ ├── dropdown/
-│ ├── input/
-│ └── textarea/
+│   └── components/
+│       ├── button/
+│       ├── checkbox/
+│       ├── dropdown/
+│       ├── input/
+│       └── textarea/
 ├── stories/
-│ ├── assets/
-│ └── page.stories.ts
+│   ├── assets/
+│   └── page.stories.ts
 .storybook/
-│ ├── main.ts
-│ └── preview.ts
+├── main.ts
+└── preview.ts
 
-
-
----
-
-## 🛠️ Getting Started
-
-### 1. Clone the Repository
-
-```bash
+🛠️ Getting Started
+1. Clone the Repository
 git clone https://github.com/your-username/ui-library.git
 cd ui-library
+
 2. Install Dependencies
-
 npm install
+
 3. Run Storybook
-
 npm run storybook
-Open your browser and navigate to http://localhost:6006
 
+Open your browser and navigate to:http://localhost:6006
 ➕ Adding a New Component
-Create a new folder in src/app/components/your-component-name
 
-Add your-component.component.ts, .html, .scss
+Create a new folder inside src/app/components/your-component-name
+Add the following files:
+your-component.component.ts
+your-component.component.html
+your-component.component.scss
+
 
 Create your-component.stories.ts in the same folder
+Run Storybook to preview your component:
 
-Run npm run storybook to preview it
+npm run storybook
 
-📸 Optional: Chromatic Integration
-To enable cloud previews and visual regression testing:
-
-
+📸 Chromatic Integration (Optional)
+To enable cloud previews and automated visual regression tests:
 npx chromatic --project-token=<your-token>
-Or run:
 
-
+Or use:
 npm run chromatic
+
 🙌 Contributing
-Want to improve or add components?
+We welcome contributions! To get started:
 
-Check out CONTRIBUTING.md
+Read the CONTRIBUTING.md file
+Fork the repo, create a feature branch, and open a pull request to the dev branch
 
-Fork → Create Branch → PR to dev
-
+Process: Fork → Branch → PR to dev
 ✅ Project Milestones
-✅ Storybook initialized
 
-✅ 5+ components documented
-
-✅ Theming aligned
-
-✅ README added
-
+✅ Storybook initialized  
+✅ 5+ components added and documented  
+✅ Theming configured  
+✅ README completed  
 ⬜ Chromatic integration (optional)
 
 📦 Tech Stack
-Framework: Angular
 
-Language: TypeScript
+Framework: Angular  
+Language: TypeScript  
+Styling: SCSS  
+Docs & Previews: Storybook  
+Visual Testing: Chromatic (optional)
 
-Styling: SCSS
 
-Docs & Previews: Storybook, Chromatic (optional)
+Built with scalability, consistency, and developer experience in mind.
