@@ -1,0 +1,48 @@
+
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 300px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  color: #b20000;
+  font-weight: bold;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 16px;
+  color: #b20000;
+  font-weight: normal;
+}
+
+.description {
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+}
+
+

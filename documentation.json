@@ -382,6 +382,92 @@
             "duplicateName": "ButtonComponent-1"
         },
         {
+            "name": "CardComponent",
+            "id": "component-CardComponent-2f35136ca96136ee8022d45aeba068cffc6922ffde8e4f60bd77a61c73ff687b6e18d4b690f299710680ba4630147b835ed02194e7ec474fcc36eee5a03ab492",
+            "file": "src/app/components/card/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card",
+            "styleUrls": [
+                "./card.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "description",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "imageSrc",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "subtitle",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'app-card',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './card.component.html',\r\n  styleUrls: ['./card.component.css'],\r\n})\r\n\r\nexport class CardComponent {\r\n  @Input() imageSrc: string = '';\r\n  @Input() title: string = '';\r\n  @Input() subtitle: string = '';\r\n  @Input() description: string = '';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n\r\n.card {\r\n  border: 1px solid #ddd;\r\n  border-radius: 8px;\r\n  padding: 16px;\r\n  max-width: 300px;\r\n  font-family: Arial, sans-serif;\r\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.header {\r\n  display: flex;\r\n  align-items: center;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.logo {\r\n  width: 40px;\r\n  margin-right: 10px;\r\n}\r\n\r\n.title-box {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.title {\r\n  margin: 0;\r\n  font-size: 16px;\r\n  color: #b20000;\r\n  font-weight: bold;\r\n}\r\n\r\n.subtitle {\r\n  margin: 0;\r\n  font-size: 16px;\r\n  color: #b20000;\r\n  font-weight: normal;\r\n}\r\n\r\n.description {\r\n  font-size: 14px;\r\n  color: #333;\r\n  margin-top: 5px;\r\n}\r\n\r\n\r\n",
+                    "styleUrl": "./card.component.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"card\">\r\n  <div class=\"header\">\r\n    <img *ngIf=\"imageSrc\" [src]=\"imageSrc\" alt=\"Logo\" class=\"logo\" />\r\n    <div class=\"title-box\">\r\n      <h2 class=\"title\">{{ title }}</h2>\r\n      <h3 class=\"subtitle\">{{ subtitle }}</h3>\r\n    </div>\r\n  </div>\r\n  <p class=\"description\">{{ description }}</p>\r\n</div>\r\n"
+        },
+        {
             "name": "CheckboxComponent",
             "id": "component-CheckboxComponent-d06bfd38e49105b1314af214509d49f0c313c9132fc2010b58f896a58d725d8b0784047b99137981c8925125b9bd17ee2b88247e1d914fe3f4ed3d08b996e7a4",
             "file": "src/app/components/checkbox/checkbox.component.ts",
@@ -1362,7 +1448,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": " <div class=\"tooltip-wrapper\" (mouseenter)=\"show = true\" (mouseleave)=\"show = false\">\r\n      <ng-content></ng-content>\r\n      <div class=\"tooltip\" *ngIf=\"show\">{{ title }}</div>\r\n    </div>"
+            "templateData": " <div class=\"main\">\r\n     <div class=\"tooltip-wrapper\" (mouseenter)=\"show = true\" (mouseleave)=\"show = false\">\r\n          <ng-content></ng-content>\r\n          <div class=\"tooltip\" *ngIf=\"show\">{{ title }}</div>\r\n        </div>\r\n </div>"
         }
     ],
     "modules": [],
@@ -1402,7 +1488,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -1431,6 +1517,15 @@
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/card/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {

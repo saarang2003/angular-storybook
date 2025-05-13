@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="header">
+    <img *ngIf="imageSrc" [src]="imageSrc" alt="Logo" class="logo" />
+    <div class="title-box">
+      <h2 class="title">{{ title }}</h2>
+      <h3 class="subtitle">{{ subtitle }}</h3>
+    </div>
+  </div>
+  <p class="description">{{ description }}</p>
+</div>
