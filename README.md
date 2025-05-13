@@ -1,59 +1,102 @@
-# AngularStorybook
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+---
 
-## Development server
+### ✅ `README.md`
 
-To start a local development server, run:
+```md
+# ⚙️ Angular UI Component Library with Storybook
 
-```bash
-ng serve
-```
+A scalable and maintainable UI component library built with **Angular**, styled with **SCSS**, and powered by **Storybook** for isolated component development, testing, and documentation.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📌 Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- 🧩 Reusable UI components (e.g., Button, Modal, Card, etc.)
+- 🖼️ Visual documentation with Storybook
+- 🧪 Component previews and isolated testing
+- 🎨 SCSS for modular styling
+- 📷 Chromatic (optional) for visual regression testing
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📁 Project Structure
 
-```bash
-ng generate --help
-```
+src/
+├── app/
+│ └── components/
+│ ├── button/
+│ ├── checkbox/
+│ ├── dropdown/
+│ ├── input/
+│ └── textarea/
+├── stories/
+│ ├── assets/
+│ └── page.stories.ts
+.storybook/
+│ ├── main.ts
+│ └── preview.ts
 
-## Building
 
-To build the project run:
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🛠️ Getting Started
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### 1. Clone the Repository
 
 ```bash
-ng e2e
-```
+git clone https://github.com/your-username/ui-library.git
+cd ui-library
+2. Install Dependencies
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+npm install
+3. Run Storybook
 
-## Additional Resources
+npm run storybook
+Open your browser and navigate to http://localhost:6006
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+➕ Adding a New Component
+Create a new folder in src/app/components/your-component-name
+
+Add your-component.component.ts, .html, .scss
+
+Create your-component.stories.ts in the same folder
+
+Run npm run storybook to preview it
+
+📸 Optional: Chromatic Integration
+To enable cloud previews and visual regression testing:
+
+
+npx chromatic --project-token=<your-token>
+Or run:
+
+
+npm run chromatic
+🙌 Contributing
+Want to improve or add components?
+
+Check out CONTRIBUTING.md
+
+Fork → Create Branch → PR to dev
+
+✅ Project Milestones
+✅ Storybook initialized
+
+✅ 5+ components documented
+
+✅ Theming aligned
+
+✅ README added
+
+⬜ Chromatic integration (optional)
+
+📦 Tech Stack
+Framework: Angular
+
+Language: TypeScript
+
+Styling: SCSS
+
+Docs & Previews: Storybook, Chromatic (optional)
