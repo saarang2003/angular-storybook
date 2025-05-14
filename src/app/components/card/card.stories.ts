@@ -13,7 +13,7 @@ export default meta;
 
 export const Default: StoryObj<CardComponent> = {
   args: {
-    imageSrc: 'https://mui.com/static/images/avatar/1.jpg',
+    imageSrc: 'https://ei.study/wp-content/uploads/2022/10/edilogo.png',
     title: 'ASSET',
     subtitle: 'TalentSearch',
     description:

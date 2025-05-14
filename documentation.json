@@ -276,7 +276,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-1d0a44385b0e97acecfdf81137b82dc52efd6ee06ebe15b64d0f3b3987caa261cec57739f0cadac5dfc01a1efb112c8e631d6f71b45f6d424a95e069a0d7c346-1",
+            "id": "component-ButtonComponent-68be30889bf05ce01c851052f8e2f919dd493011c76f6442e19927e0f740e2f45a1bb06b23563e0f07d176e4a454ace700709b9a0e5269a9f2b196279132b719-1",
             "file": "src/app/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -326,7 +326,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 31,
-                    "type": "\"primary\" | \"secondary\" | \"danger\"",
+                    "type": "\"primary\" | \"secondary\" | \"danger\" | \"outline\"",
                     "decorators": []
                 }
             ],
@@ -367,11 +367,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  standalone: true,\r\n  imports: [CommonModule], \r\n  template: `\r\n    <button\r\n      [disabled]=\"disabled || loading\"\r\n      [ngClass]=\"[\r\n        variant,\r\n        disabled ? 'disabled' : '',\r\n        loading ? 'loading' : ''\r\n      ]\"\r\n       (click)=\"handleClick()\"\r\n    >\r\n      <ng-container *ngIf=\"loading; else labelTpl\">\r\n        <span class=\"loader\"></span>\r\n      </ng-container>\r\n      <ng-template #labelTpl>{{ label }}</ng-template>\r\n    </button>\r\n  `,\r\n  styleUrls: ['./button.component.css']\r\n})\r\n\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() variant: 'primary' | 'secondary' | 'danger' = 'primary';\r\n  @Input() loading = false;\r\n  @Input() disabled = false;\r\n\r\n @Output() action = new EventEmitter<void>();\r\n\r\n   handleClick() {\r\n    if (!this.disabled && !this.loading) {\r\n      this.action.emit(); // Emit the action event\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  standalone: true,\r\n  imports: [CommonModule], \r\n  template: `\r\n    <button\r\n      [disabled]=\"disabled || loading\"\r\n      [ngClass]=\"[\r\n        variant,\r\n        disabled ? 'disabled' : '',\r\n        loading ? 'loading' : ''\r\n      ]\"\r\n       (click)=\"handleClick()\"\r\n    >\r\n      <ng-container *ngIf=\"loading; else labelTpl\">\r\n        <span class=\"loader\"></span>\r\n      </ng-container>\r\n      <ng-template #labelTpl>{{ label }}</ng-template>\r\n    </button>\r\n  `,\r\n  styleUrls: ['./button.component.css']\r\n})\r\n\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() variant: 'primary' | 'secondary' | 'danger' |'outline' = 'primary';\r\n  @Input() loading = false;\r\n  @Input() disabled = false;\r\n\r\n @Output() action = new EventEmitter<void>();\r\n\r\n   handleClick() {\r\n    if (!this.disabled && !this.loading) {\r\n      this.action.emit(); // Emit the action event\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n\r\nbutton {\r\n    padding: 0.5rem 1rem;\r\n    border: none;\r\n    border-radius: 4px;\r\n    color: white;\r\n    cursor: pointer;\r\n    font-weight: 600;\r\n  }\r\n  \r\n  .primary {\r\n    background-color: #007bff;\r\n  }\r\n  \r\n  .secondary {\r\n    background-color: #6c757d;\r\n  }\r\n  \r\n  .danger {\r\n    background-color: #dc3545;\r\n  }\r\n  \r\n  .disabled {\r\n    opacity: 0.6;\r\n    cursor: not-allowed;\r\n  }\r\n  \r\n  .loading {\r\n    position: relative;\r\n  }\r\n  \r\n  .loader {\r\n    width: 16px;\r\n    height: 16px;\r\n    border: 2px solid white;\r\n    border-top: 2px solid transparent;\r\n    border-radius: 50%;\r\n    display: inline-block;\r\n    animation: spin 0.6s linear infinite;\r\n  }\r\n  \r\n  @keyframes spin {\r\n    to {\r\n      transform: rotate(360deg);\r\n    }\r\n  }\r\n  ",
+                    "data": "\r\n\r\nbutton {\r\n    padding: 0.5rem 1rem;\r\n    border: none;\r\n    border-radius: 4px;\r\n    color: white;\r\n    cursor: pointer;\r\n    font-weight: 600;\r\n  }\r\n  \r\n  .primary {\r\n    background-color: #B91E1E;\r\n  }\r\n  \r\n  .secondary {\r\n    background-color: #BA551E;\r\n  }\r\n  \r\n  .danger {\r\n    background-color: #dc3545;\r\n  }\r\n\r\n  .outline{\r\n    border: 1px solid #B91E1E;\r\n    padding: 2px;\r\n    text-align: center;\r\n  }\r\n  \r\n  .disabled {\r\n    opacity: 0.6;\r\n    cursor: not-allowed;\r\n  }\r\n  \r\n  .loading {\r\n    position: relative;\r\n  }\r\n  \r\n  .loader {\r\n    width: 16px;\r\n    height: 16px;\r\n    border: 2px solid white;\r\n    border-top: 2px solid transparent;\r\n    border-radius: 50%;\r\n    display: inline-block;\r\n    animation: spin 0.6s linear infinite;\r\n  }\r\n  \r\n  @keyframes spin {  \r\n    to {\r\n      transform: rotate(360deg);\r\n    }\r\n  }\r\n  ",
                     "styleUrl": "./button.component.css"
                 }
             ],

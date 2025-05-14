@@ -28,7 +28,7 @@ import { CommonModule } from '@angular/common';
 
 export class ButtonComponent {
   @Input() label = 'Button';
-  @Input() variant: 'primary' | 'secondary' | 'danger' = 'primary';
+  @Input() variant: 'primary' | 'secondary' | 'danger' |'outline' = 'primary';
   @Input() loading = false;
   @Input() disabled = false;
 

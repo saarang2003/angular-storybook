@@ -1,7 +1,7 @@
-import { Meta, StoryFn } from '@storybook/angular';
+import { Meta, StoryFn, StoryObj } from '@storybook/angular';
 import { ButtonComponent } from './button.component';
 import { CommonModule } from '@angular/common';
-import {action} from '@storybook/addon-actions';
+import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Components/Button',
@@ -9,50 +9,77 @@ export default {
   argTypes: {
     variant: {
       control: 'radio',
-      options: ['primary', 'secondary', 'danger'],
+      options: ['primary', 'secondary', 'danger' , 'outline'],
     },
     loading: { control: 'boolean' },
     disabled: { control: 'boolean' },
   },
-  tags : ['autodocs']
+  tags: ['autodocs'],
 } as Meta;
 
-const Template: StoryFn<ButtonComponent> = (args) => ({
-  props: {
-    ...args,
-    action: action('button-clicked'),
+
+export const Primary: StoryObj<ButtonComponent> = {
+  args: {
+    label: 'Primary',
+    variant: 'primary',
   },
-  moduleMetadata: {
-    imports: [CommonModule],
+  render: (args) => ({
+    props: {
+      ...args,
+      action: action('button clicked'),
+    },
+  }),
+};
+
+export const Secondary: StoryObj<ButtonComponent> = {
+  args: {
+    label: 'Secondary',
+    variant: 'secondary',
   },
-});
-
-export const Primary = Template.bind({});
-Primary.args = {
-  label: 'Primary',
-  variant: 'primary',
+  render: (args) => ({
+    props: {
+      ...args,
+      action: action('button clicked'),
+    },
+  }),
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Secondary',
-  variant: 'secondary',
+export const Danger: StoryObj<ButtonComponent> = {
+  args: {
+    label: 'Danger',
+    variant: 'danger',
+  },
+  render: (args) => ({
+    props: {
+      ...args,
+      action: action('button clicked'),
+    },
+  }),
 };
 
-export const Danger = Template.bind({});
-Danger.args = {
-  label: 'Danger',
-  variant: 'danger',
+export const Outline: StoryObj<ButtonComponent> = {
+  args : {
+    label : 'Outline',
+    variant : 'outline',
+  },
+  render: (args) => ({
+    props: {
+      ...args,
+      action: action('button clicked'),
+    },
+  }),
+}
+
+export const Loading: StoryObj<ButtonComponent> = {
+  args: {
+    label: 'Loading',
+    loading: true,
+  },
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
-  label: 'Loading',
-  loading: true,
-};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  label: 'Disabled',
-  disabled: true,
+export const Disabled: StoryObj<ButtonComponent> = {
+  args: {
+    label: 'Disabled',
+    disabled: true,
+  },
 };
