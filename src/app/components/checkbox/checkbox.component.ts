@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   imports : [CommonModule],
   standalone: true,
   templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.css'],
+  styleUrls: ['./checkbox.component.scss'],
 })
 
 

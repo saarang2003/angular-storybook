@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './textarea.component.html',
-  styleUrls: ['./textarea.component.css']
+  styleUrls: ['./textarea.component.scss']
 })
 export class TextareaComponent {
   @Input() label: string = '';

@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   standalone : true,
   imports: [CommonModule],
   templateUrl: './tooltip.component.html',
-  styleUrl: './tooltip.component.css'
+  styleUrl: './tooltip.component.scss'
 })
 
 export class TooltipComponent {
