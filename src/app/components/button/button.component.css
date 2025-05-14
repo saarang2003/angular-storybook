@@ -1,59 +1,74 @@
+button {
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
 
+/* Sizes */
+.small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
 
-button{
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    font-weight: 600;
-  }
-  
-  .primary {
-    background-color: #B91E1E;
-  }
-  
-  .secondary {
-    background-color: #BA551E;
-  }
-  
-  .danger {
-    background-color: #dc3545;
-  }
+.medium {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
 
-  .outline{
-    border: 1px solid #B91E1E;
-    color: #B91E1E;
-    background: #ffffff;
-    text-align: center;
-  }
+.large {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  width: 100%;
+}
 
-  .outline:hover {
-    background: #ededed;
+/* Variants */
+.primary {
+  background-color: #B91E1E;
+}
+
+.secondary {
+  background-color: #BA551E;
+}
+
+.danger {
+  background-color: #dc3545;
+}
+
+.outline {
+  border: 1px solid #B91E1E;
+  color: #B91E1E;
+  background: #ffffff;
+  text-align: center;
+}
+
+.outline:hover {
+  background: #ededed;
+}
+
+/* States */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loading {
+  position: relative;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
-  
-  .disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-  
-  .loading {
-    position: relative;
-  }
-  
-  .loader {
-    width: 16px;
-    height: 16px;
-    border: 2px solid white;
-    border-top: 2px solid transparent;
-    border-radius: 50%;
-    display: inline-block;
-    animation: spin 0.6s linear infinite;
-  }
-  
-  @keyframes spin {  
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
+}

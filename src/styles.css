@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primary: #B91E1E;
+  --color-secondary: #BA551E;
+  --color-danger: #dc3545;
+  --color-outline: #B91E1E;
+  --color-text: #1a1a1a;
+  --color-bg: #ffffff;
+  --color-hover: #f2f2f2;
+  
+  --font-sans: 'Inter', 'IBM Plex Sans', 'General Sans', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+}

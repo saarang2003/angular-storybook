@@ -1,17 +1,19 @@
 <button
   [disabled]="disabled || loading"
-  [ngClass]="[variant, disabled ? 'disabled' : '', loading ? 'loading' : '']" 
-  style="padding: 0.5rem 1rem; border: none; border-radius: 4px; color: white; font-weight: bold; cursor: pointer;"
+  [attr.aria-disabled]="disabled || loading"
+  [attr.aria-label]="loading ? 'Loading...' : label"
+  [ngClass]="[
+    variant,
+    size,
+    disabled ? 'disabled' : '',
+    loading ? 'loading' : ''
+  ]"
+  (click)="handleClick()"
 >
   <ng-container *ngIf="loading; else labelTpl">
-    <span class="loader" style="
-      width: 16px; height: 16px;
-      border: 2px solid white;
-      border-top: 2px solid transparent;
-      border-radius: 50%;
-      display: inline-block;
-      animation: spin 0.6s linear infinite;
-    "></span>
+    <span class="loader" role="status" aria-live="polite"></span>
   </ng-container>
-  <ng-template #labelTpl>{{ label }}</ng-template>
+  <ng-template #labelTpl>
+    <span>{{ label }}</span>
+  </ng-template>
 </button>
