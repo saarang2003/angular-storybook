@@ -7,7 +7,7 @@ import { ButtonComponent } from "../button/button.component";
   standalone: true,
   imports: [CommonModule, ButtonComponent],
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
   @Input() title: string = 'Navbar';

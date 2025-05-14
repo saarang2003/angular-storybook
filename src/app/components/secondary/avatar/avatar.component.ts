@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   standalone : true,
   imports: [CommonModule],
   templateUrl: './avatar.component.html',
-  styleUrl: './avatar.component.scss'
+  styleUrl: './avatar.component.css'
 })
 
 export class AvatarComponent {

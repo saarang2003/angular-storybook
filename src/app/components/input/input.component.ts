@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'ui-input',
   imports: [CommonModule, FormsModule],
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss']
+  styleUrls: ['./input.component.css']
 })
 export class InputComponent {
   @Input() label: string = '';

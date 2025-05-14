@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'ui-toggle',
   templateUrl: './toggle.component.html',
-  styleUrls: ['./toggle.component.scss']
+  styleUrls: ['./toggle.component.css']
 })
 export class ToggleComponent {
   @Input() label: string = '';

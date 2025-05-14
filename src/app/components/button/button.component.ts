@@ -23,7 +23,7 @@ import { CommonModule } from '@angular/common';
       <ng-template #labelTpl>{{ label }}</ng-template>
     </button>
   `,
-  styleUrls: ['./button.component.scss']
+  styleUrls: ['./button.component.css']
 })
 
 export class ButtonComponent {
