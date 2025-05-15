@@ -25,26 +25,26 @@ button {
 
 /* Variants */
 .primary {
-  background-color: #B91E1E;
+  background-color: var(--color-primary);
 }
 
 .secondary {
-  background-color: #BA551E;
+  background-color: var(--color-secondary);
 }
 
 .danger {
-  background-color: #dc3545;
+  background-color: var(--color-danger);
 }
 
 .outline {
-  border: 1px solid #B91E1E;
-  color: #B91E1E;
-  background: #ffffff;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-bg);
   text-align: center;
 }
 
 .outline:hover {
-  background: #ededed;
+  background: var(--color-hover);
 }
 
 /* States */
