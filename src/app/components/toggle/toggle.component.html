@@ -1,8 +1,15 @@
 <div class="toggle-wrapper">
-    <label class="toggle-label">{{ label }}</label>
-    <label class="switch">
-      <input type="checkbox" [checked]="checked" (change)="toggle()" />
-      <span class="slider round"></span>
-    </label>
-  </div>
-  
+  <label class="toggle-label" [attr.for]="toggleId">{{ label }}</label>
+  <label class="switch">
+    <input
+      type="checkbox"
+      [id]="toggleId"
+      role="switch"
+      [attr.aria-checked]="checked"
+      [checked]="checked"
+      (change)="toggle()"
+      [attr.aria-label]="label"
+    />
+    <span class="slider round"></span>
+  </label>
+</div>

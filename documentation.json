@@ -276,7 +276,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-d6d818aaaa3b37e2a1e84d6d2b571a9fd4dbf6c4bb24ab07d974258596029727d215eb040f5dec3cce01d6f65ba4c6b8c5356b87026cc507469849b81824abe5-1",
+            "id": "component-ButtonComponent-7e2bed32bd5fd63e9ae44474772b3deaaeac52f181f09c67ad1af7357bfa97b49b77688ad21990e0135a419ddddb83b1c7c70b29b4bb25993ab9535e2ba5894f-1",
             "file": "src/app/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -369,14 +369,13 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "CommonModule",
-                    "type": "module"
+                    "name": "NgClass"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  standalone: true,\r\n  imports: [CommonModule], \r\n  template: `\r\n    <button\r\n  [disabled]=\"disabled || loading\"\r\n  [attr.aria-disabled]=\"disabled || loading\"\r\n  [attr.aria-label]=\"loading ? 'Loading...' : label\"\r\n  [ngClass]=\"[\r\n    variant,\r\n    size,\r\n    disabled ? 'disabled' : '',\r\n    loading ? 'loading' : ''\r\n  ]\"\r\n  (click)=\"handleClick()\"\r\n>\r\n  <ng-container *ngIf=\"loading; else labelTpl\">\r\n    <span class=\"loader\" role=\"status\" aria-live=\"polite\"></span>\r\n  </ng-container>\r\n  <ng-template #labelTpl>\r\n    <span>{{ label }}</span>\r\n  </ng-template>\r\n</button>\r\n  `,\r\n  styleUrls: ['./button.component.css']\r\n})\r\n\r\nexport class ButtonComponent {\r\n@Input() label = 'Button';\r\n@Input() variant: 'primary' | 'secondary' | 'danger' | 'outline' = 'primary';\r\n@Input() loading = false;\r\n@Input() disabled = false;\r\n@Input() size: 'small' | 'medium' | 'large' = 'medium'; // NEW\r\n@Output() action = new EventEmitter<void>();\r\n\r\nhandleClick() {\r\n  if (!this.disabled && !this.loading) {\r\n    this.action.emit();\r\n  }\r\n}\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';\r\nimport {  NgClass } from '@angular/common';\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  standalone: true,\r\n  imports: [NgClass], \r\n  template: `\r\n    <button\r\n  [disabled]=\"disabled || loading\"\r\n  [attr.aria-disabled]=\"disabled || loading\"\r\n  [attr.aria-label]=\"loading ? 'Loading...' : label\"\r\n  [ngClass]=\"[\r\n    variant,\r\n    size,\r\n    disabled ? 'disabled' : '',\r\n    loading ? 'loading' : ''\r\n  ]\"\r\n  (click)=\"handleClick()\"\r\n>\r\n  <ng-container *ngIf=\"loading; else labelTpl\">\r\n    <span class=\"loader\" role=\"status\" aria-live=\"polite\"></span>\r\n  </ng-container>\r\n  <ng-template #labelTpl>\r\n    <span>{{ label }}</span>\r\n  </ng-template>\r\n</button>\r\n  `,\r\n  styleUrls: ['./button.component.css']\r\n})\r\n\r\nexport class ButtonComponent {\r\n@Input() label = 'Button';\r\n@Input() variant: 'primary' | 'secondary' | 'danger' | 'outline' = 'primary';\r\n@Input() loading = false;\r\n@Input() disabled = false;\r\n@Input() size: 'small' | 'medium' | 'large' = 'medium'; // NEW\r\n@Output() action = new EventEmitter<void>();\r\n\r\nhandleClick() {\r\n  if (!this.disabled && !this.loading) {\r\n    this.action.emit();\r\n  }\r\n}\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1313,7 +1312,7 @@
         },
         {
             "name": "ToggleComponent",
-            "id": "component-ToggleComponent-c461bda005737f55af22f5499b83e24e737344c3b1e642acd5a60c4b48aec952c9b3044ddb970ef71a624ab0c95ca18791772816b529fc3d6f036b2a613c204a",
+            "id": "component-ToggleComponent-628b4d6ec7a28711a3f85a7491b7912e941086d180516ff445b6323edc5bc4da181e9b0629cbed387ff606ae2895e004719b3cad276fafcf9e8614fdfe43b1e4",
             "file": "src/app/components/toggle/toggle.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1336,7 +1335,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 14,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1345,7 +1344,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 }
@@ -1356,11 +1355,23 @@
                     "defaultValue": "new EventEmitter<boolean>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 16,
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "toggleId",
+                    "defaultValue": "'toggle-' + Math.random().toString(36).substring(2)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "toggle",
@@ -1368,7 +1379,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15,
+                    "line": 18,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1377,12 +1388,12 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ui-toggle',\r\n  templateUrl: './toggle.component.html',\r\n  styleUrls: ['./toggle.component.css']\r\n})\r\nexport class ToggleComponent {\r\n  @Input() label: string = '';\r\n  @Input() checked: boolean = false;\r\n  @Output() changed = new EventEmitter<boolean>();\r\n\r\n  toggle() {\r\n    this.checked = !this.checked;\r\n    this.changed.emit(this.checked);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'ui-toggle',\r\n  standalone : true,\r\n  imports : [],\r\n  templateUrl: './toggle.component.html',\r\n  styleUrls: ['./toggle.component.css']\r\n})\r\nexport class ToggleComponent {\r\n  @Input() label: string = '';\r\n  @Input() checked: boolean = false;\r\n  toggleId = 'toggle-' + Math.random().toString(36).substring(2); // unique ID\r\n  @Output() changed = new EventEmitter<boolean>();\r\n\r\n  toggle() {\r\n    this.checked = !this.checked;\r\n    this.changed.emit(this.checked);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1392,7 +1403,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"toggle-wrapper\">\r\n    <label class=\"toggle-label\">{{ label }}</label>\r\n    <label class=\"switch\">\r\n      <input type=\"checkbox\" [checked]=\"checked\" (change)=\"toggle()\" />\r\n      <span class=\"slider round\"></span>\r\n    </label>\r\n  </div>\r\n  "
+            "templateData": "<div class=\"toggle-wrapper\">\r\n  <label class=\"toggle-label\" [attr.for]=\"toggleId\">{{ label }}</label>\r\n  <label class=\"switch\">\r\n    <input\r\n      type=\"checkbox\"\r\n      [id]=\"toggleId\"\r\n      role=\"switch\"\r\n      [attr.aria-checked]=\"checked\"\r\n      [checked]=\"checked\"\r\n      (change)=\"toggle()\"\r\n      [attr.aria-label]=\"label\"\r\n    />\r\n    <span class=\"slider round\"></span>\r\n  </label>\r\n</div>\r\n"
         },
         {
             "name": "TooltipComponent",
@@ -1615,7 +1626,7 @@
                 "linktype": "component",
                 "name": "ToggleComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {

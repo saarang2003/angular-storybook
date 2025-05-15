@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {  NgClass, NgIf } from '@angular/common';    // faster compilation and smaller bundle
 
 
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [CommonModule], 
+  imports: [NgClass , NgIf], 
   template: `
     <button
   [disabled]="disabled || loading"
