@@ -23,6 +23,7 @@ export default {
     tags : ['autodocs']
 } as Meta;
 
+
 const Template: StoryFn = (args) => ({
   component: CheckboxComponent,
   props: args,

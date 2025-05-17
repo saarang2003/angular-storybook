@@ -11,6 +11,10 @@ export default {
       control: 'radio',
       options: ['primary', 'secondary', 'danger' , 'outline'],
     },
+    width : {
+      control : 'text',
+      description : 'change the width as you want  '
+    } ,
     loading: { control: 'boolean' },
     disabled: { control: 'boolean' },
   },
@@ -35,6 +39,20 @@ export const Secondary: StoryObj<ButtonComponent> = {
   args: {
     label: 'Secondary',
     variant: 'secondary',
+  },
+  render: (args) => ({
+    props: {
+      ...args,
+      action: action('button clicked'),
+    },
+  }),
+};
+
+export const DynamicWidthButton: StoryObj<ButtonComponent> = {
+  args: {
+    label: 'DynamicWidthButton',
+    variant: 'primary',
+    width : '30px'
   },
   render: (args) => ({
     props: {

@@ -2,6 +2,7 @@
   [disabled]="disabled || loading"
   [attr.aria-disabled]="disabled || loading"
   [attr.aria-label]="loading ? 'Loading...' : label"
+  [ngStyle] = "{ width: width }"
   [ngClass]="[
     variant,
     size,

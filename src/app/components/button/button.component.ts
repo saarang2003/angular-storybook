@@ -1,17 +1,16 @@
 import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';
-import {  NgClass, NgIf } from '@angular/common';    // faster compilation and smaller bundle
-
-
+import {  NgClass, NgIf, NgStyle } from '@angular/common';    // faster compilation and smaller bundle
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [NgClass , NgIf], 
+  imports: [NgClass , NgIf , NgStyle], 
   template: `
     <button
   [disabled]="disabled || loading"
   [attr.aria-disabled]="disabled || loading"
   [attr.aria-label]="loading ? 'Loading...' : label"
+  [ngStyle] = "{ width: width }"
   [ngClass]="[
     variant,
     size,
@@ -37,6 +36,7 @@ export class ButtonComponent {
 @Input() loading = false;
 @Input() disabled = false;
 @Input() size: 'small' | 'medium' | 'large' = 'medium'; // NEW
+@Input() width :string = '100px';
 @Output() action = new EventEmitter<void>();
 
 handleClick() {

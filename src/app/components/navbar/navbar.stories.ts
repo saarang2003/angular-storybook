@@ -17,9 +17,9 @@ export default {
   tags : ['autodocs']
 } as Meta<NavbarComponent>;
 
-const Template: StoryFn<NavbarComponent> = (args: NavbarComponent) => ({
-  props: args,
-});
+// const Template: StoryFn<NavbarComponent> = (args: NavbarComponent) => ({
+//   props: args,
+// });
 
 export const Default : StoryObj<NavbarComponent> = {
   args : {
