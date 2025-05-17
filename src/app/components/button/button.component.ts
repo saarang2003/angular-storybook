@@ -10,7 +10,7 @@ import {  NgClass, NgIf, NgStyle } from '@angular/common';    // faster compilat
   [disabled]="disabled || loading"
   [attr.aria-disabled]="disabled || loading"
   [attr.aria-label]="loading ? 'Loading...' : label"
-  [ngStyle] = "{ width: width }"
+  [ngStyle] = "{ width: width  , height : height}"
   [ngClass]="[
     variant,
     size,
@@ -36,7 +36,8 @@ export class ButtonComponent {
 @Input() loading = false;
 @Input() disabled = false;
 @Input() size: 'small' | 'medium' | 'large' = 'medium'; // NEW
-@Input() width :string = '100px';
+@Input() width : string = '100px';
+@Input() height : string = '30px';
 @Output() action = new EventEmitter<void>();
 
 handleClick() {

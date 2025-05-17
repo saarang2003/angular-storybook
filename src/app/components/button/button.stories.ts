@@ -15,6 +15,10 @@ export default {
       control : 'text',
       description : 'change the width as you want  '
     } ,
+    height : {
+      control : 'text',
+      description : 'change the hright as you want  '
+    },
     loading: { control: 'boolean' },
     disabled: { control: 'boolean' },
   },
@@ -52,7 +56,8 @@ export const DynamicWidthButton: StoryObj<ButtonComponent> = {
   args: {
     label: 'DynamicWidthButton',
     variant: 'primary',
-    width : '30px'
+    width : '150px',
+    height : '30px'
   },
   render: (args) => ({
     props: {

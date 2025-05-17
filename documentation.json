@@ -276,7 +276,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-5e009625391229eff4f187ccadeed69af43ac54fa752e75e6ccf9dbf6b2b95f2629ca3596011a0bb39309a889017933224e6ebf3dcd303f8d14a788071a0af71-1",
+            "id": "component-ButtonComponent-6eb5e2205e6adb392eed36af665144070327f6bd7113a24165885fbf1ce0e2e5169c2b19b542bf4ff7c03788ed2e81870b7d01b0b7a75f1b33231cd611ab77d7-1",
             "file": "src/app/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -288,7 +288,7 @@
                 "./button.component.css"
             ],
             "styles": [],
-            "template": "    <button\n  [disabled]=\"disabled || loading\"\n  [attr.aria-disabled]=\"disabled || loading\"\n  [attr.aria-label]=\"loading ? 'Loading...' : label\"\n  [ngStyle] = \"{ width: width }\"\n  [ngClass]=\"[\n    variant,\n    size,\n    disabled ? 'disabled' : '',\n    loading ? 'loading' : ''\n  ]\"\n  (click)=\"handleClick()\"\n>\n  <ng-container *ngIf=\"loading; else labelTpl\">\n    <span class=\"loader\" role=\"status\" aria-live=\"polite\"></span>\n  </ng-container>\n  <ng-template #labelTpl>\n    <span>{{ label }}</span>\n  </ng-template>\n</button>\n",
+            "template": "    <button\n  [disabled]=\"disabled || loading\"\n  [attr.aria-disabled]=\"disabled || loading\"\n  [attr.aria-label]=\"loading ? 'Loading...' : label\"\n  [ngStyle] = \"{ width: width  , height : height}\"\n  [ngClass]=\"[\n    variant,\n    size,\n    disabled ? 'disabled' : '',\n    loading ? 'loading' : ''\n  ]\"\n  (click)=\"handleClick()\"\n>\n  <ng-container *ngIf=\"loading; else labelTpl\">\n    <span class=\"loader\" role=\"status\" aria-live=\"polite\"></span>\n  </ng-container>\n  <ng-template #labelTpl>\n    <span>{{ label }}</span>\n  </ng-template>\n</button>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -300,6 +300,15 @@
                     "deprecationMessage": "",
                     "line": 37,
                     "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "height",
+                    "defaultValue": "'30px'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -340,7 +349,7 @@
                 },
                 {
                     "name": "width",
-                    "defaultValue": "'20px'",
+                    "defaultValue": "'100px'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 39,
@@ -354,7 +363,7 @@
                     "defaultValue": "new EventEmitter<void>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 40,
+                    "line": 41,
                     "type": "EventEmitter"
                 }
             ],
@@ -366,7 +375,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 42,
+                    "line": 43,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -390,7 +399,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';\r\nimport {  NgClass, NgIf, NgStyle } from '@angular/common';    // faster compilation and smaller bundle\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  standalone: true,\r\n  imports: [NgClass , NgIf , NgStyle], \r\n  template: `\r\n    <button\r\n  [disabled]=\"disabled || loading\"\r\n  [attr.aria-disabled]=\"disabled || loading\"\r\n  [attr.aria-label]=\"loading ? 'Loading...' : label\"\r\n  [ngStyle] = \"{ width: width }\"\r\n  [ngClass]=\"[\r\n    variant,\r\n    size,\r\n    disabled ? 'disabled' : '',\r\n    loading ? 'loading' : ''\r\n  ]\"\r\n  (click)=\"handleClick()\"\r\n>\r\n  <ng-container *ngIf=\"loading; else labelTpl\">\r\n    <span class=\"loader\" role=\"status\" aria-live=\"polite\"></span>\r\n  </ng-container>\r\n  <ng-template #labelTpl>\r\n    <span>{{ label }}</span>\r\n  </ng-template>\r\n</button>\r\n  `,\r\n  styleUrls: ['./button.component.css']\r\n})\r\n\r\nexport class ButtonComponent {\r\n@Input() label = 'Button';\r\n@Input() variant: 'primary' | 'secondary' | 'danger' | 'outline' = 'primary';\r\n@Input() loading = false;\r\n@Input() disabled = false;\r\n@Input() size: 'small' | 'medium' | 'large' = 'medium'; // NEW\r\n@Input() width :string = '20px';\r\n@Output() action = new EventEmitter<void>();\r\n\r\nhandleClick() {\r\n  if (!this.disabled && !this.loading) {\r\n    this.action.emit();\r\n  }\r\n}\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core';\r\nimport {  NgClass, NgIf, NgStyle } from '@angular/common';    // faster compilation and smaller bundle\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  standalone: true,\r\n  imports: [NgClass , NgIf , NgStyle], \r\n  template: `\r\n    <button\r\n  [disabled]=\"disabled || loading\"\r\n  [attr.aria-disabled]=\"disabled || loading\"\r\n  [attr.aria-label]=\"loading ? 'Loading...' : label\"\r\n  [ngStyle] = \"{ width: width  , height : height}\"\r\n  [ngClass]=\"[\r\n    variant,\r\n    size,\r\n    disabled ? 'disabled' : '',\r\n    loading ? 'loading' : ''\r\n  ]\"\r\n  (click)=\"handleClick()\"\r\n>\r\n  <ng-container *ngIf=\"loading; else labelTpl\">\r\n    <span class=\"loader\" role=\"status\" aria-live=\"polite\"></span>\r\n  </ng-container>\r\n  <ng-template #labelTpl>\r\n    <span>{{ label }}</span>\r\n  </ng-template>\r\n</button>\r\n  `,\r\n  styleUrls: ['./button.component.css']\r\n})\r\n\r\nexport class ButtonComponent {\r\n@Input() label = 'Button';\r\n@Input() variant: 'primary' | 'secondary' | 'danger' | 'outline' = 'primary';\r\n@Input() loading = false;\r\n@Input() disabled = false;\r\n@Input() size: 'small' | 'medium' | 'large' = 'medium'; // NEW\r\n@Input() width : string = '100px';\r\n@Input() height : string = '30px';\r\n@Output() action = new EventEmitter<void>();\r\n\r\nhandleClick() {\r\n  if (!this.disabled && !this.loading) {\r\n    this.action.emit();\r\n  }\r\n}\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1661,7 +1670,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
